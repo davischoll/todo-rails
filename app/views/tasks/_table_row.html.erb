@@ -1,4 +1,18 @@
 <tr class="border-top">
-  <td><%= task.description %></td>
+  <td>
+    <span class="text-<%=task.css_color%>"><%= task.symbol %> </span>
+    <% if task.done? %>
+      <s class="text-muted"><%= task.description %></s>
+    <% else %>
+      <%= task.description %>
+    <% end %>
+  </td>
+
   <td><%= l task.due_date %></td>
+
+  <td>
+    <%= link_to 'Editar', edit_task_path(task), class: 'btn btn-sm btn-secondary' %>
+    <%= link_to 'Apagar', task, method: :delete, class: 'btn btn-sm btn-danger',
+      data: { confirm: 'Tem certeza que deseja apagar esta tarefa?' } %>
+  </td>
 </tr>
