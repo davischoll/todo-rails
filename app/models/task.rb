@@ -8,11 +8,19 @@ class Task < ApplicationRecord
 
   scope :only_parents, -> { where(parent_id: nil) }
 
+  def parent?
+    parent_id.nil?
+  end
+
+  def sub_task?
+    !parent?
+  end
+
   def symbol
     case status
-      when 'pending' then '➤'
-      when 'done'    then '✔'
-      when 'expired' then '✘'
+      when 'pending' then parent? ? '》' : '»'
+      when 'done'    then parent? ? '✔' : '✓'
+      when 'expired' then parent? ? '✘' : '〤'
     end
   end
 

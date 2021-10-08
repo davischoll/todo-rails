@@ -1,8 +1,8 @@
-<tr class="border-top">
-  <td>
-    <span class="text-<%=task.css_color%>"><%= task.symbol %> </span>
+<tr class="<%= task.parent? ? 'border-top' : '' %>">
+  <td class="<%= task.sub_task? ? 'ps-5' : '' %>">
+    <span class="text-<%= task.css_color %>"> <%= task.symbol %> </span>
     <% if task.done? %>
-      <s class="text-muted"><%= task.description %></s>
+      <s class="text-muted"> <%= task.description %> </s>
     <% else %>
       <%= task.description %>
     <% end %>
@@ -10,8 +10,13 @@
 
   <td><%= l task.due_date %></td>
 
-  <td>
+  <td class="text-end pe-0">
+    <% if task.parent? %>
+      <%= link_to '＋ Sub Tarefa', new_task_path(parent_id: task.id), class: 'btn btn-sm btn-success' %>
+    <% end %>
+
     <%= link_to 'Editar', edit_task_path(task), class: 'btn btn-sm btn-secondary' %>
+
     <%= link_to 'Apagar', task, method: :delete, class: 'btn btn-sm btn-danger',
       data: { confirm: 'Tem certeza que deseja apagar esta tarefa?' } %>
   </td>
