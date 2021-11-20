@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate
+  # before_action :authenticate
 
-  private
+  # private
 
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == Rails.application.credentials.authentication[:username] &&
-      password == Rails.application.credentials.authentication[:password]
-    end
-  end
+  # def authenticate
+  #   authenticate_or_request_with_http_basic do |username, password|
+  #     username == Rails.application.credentials.authentication[:username] &&
+  #     password == Rails.application.credentials.authentication[:password]
+  #   end
+  # end
 end
