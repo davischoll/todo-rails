@@ -6,14 +6,15 @@ Aplicação construída com:
 - [Bootstrap](https://getbootstrap.com/)
 
 ## Preview
-O projeto em produção pode ser conferido [aqui](http://davis-todo.herokuapp.com/tasks).
+O projeto em produção pode ser conferido [aqui](https://davis-todo-rails-app.fly.dev/).
 
 ![Captura de Tela 2021-12-07 às 19 04 25](https://user-images.githubusercontent.com/66805908/145113551-d7655c9c-6489-4f28-a7e7-76a57fed65e7.png)
 
 ## Funcionalidades
 - Cadastro de lista de tarefas a serem executadas;
-- Cadastro de sub-tarefas, que podem estar ligadas à tarefa principal;
+- Cadastro de sub-tarefas, ligadas à tarefa principal;
 - Tarefas podem ser editadas: para serem marcadas como concluídas ou ter o seu prazo estendido;
+- Tarefas e sub-tarefas podem ser excluídas, pelo botão "Apagar";
 - Botão de "Exportar" para gerar um arquivo CSV com a lista de tarefas e subtarefas.
 
 ## Contato
